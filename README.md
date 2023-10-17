@@ -35,9 +35,11 @@ kolegę ze starszego roku. Może on ci wręczyć takie przedmioty jak np:
 W żabce będzie można kupić takie przedmioty jak np:
 - hot dog (odnawia hp)
 - Monster Energy (chwilowe zwiększenie obrażeń)
-- piwo (chwilowe zwiększenie sprytu)
+- papierosy (chwilowe zwiększenie sprytu)
 (każdego z tych przedmiotów będą różne rodzaje i w zależności od rzadkości będą one dodawły odpowiednio więcej statystyk)
 
 W salach lekcyjnych spotkamy podstawowych przeciwników natomiast w auli bossy.
+
+Gra teoretycznie kończy się po przejściu wszytskich etapów (zdaniu studiów) ale wtedy wszystkie pokoje zostą otwarte oraz opustoszałe a gracz dostanie zadanie aby "znaleźć pracę.
 
 
