@@ -10,26 +10,26 @@ ale pomimo braku zaangażowania i ogromnego lenistwa spróbuje stawić im czoła
 - Postać w którą się wcielamy w grze to zwykły szary student
 w zależności od wybranej klasy trochę różniący się wyglądem, cechami charakterystycznymi, atrybutami oraz początkową bronią. Każda z postaci posiada:
     - Zdrowie
-    - Inteligencje (odpowienik DMG)
+    - Wiedza (odpowienik DMG)
     - Spryt (zdolność do uniku podstawowych ataków)
 
   **Dostępne "klasy" postaci:**
     - technik informatyk:
-        - większe bazowe HP
-        - większe doświadczenie na start ale też zmniejszony xp z bosów
+        - większa bazowa wiedza.
+        - większe doświadczenie na start ale też zmniejszony xp z bosów.
         - podstawowy atak to "odór":
             - zadaje dmg wrogom dookoła niego, z początku na małym obszarze.
 
     - student debil:
-        - większy bazowy spryt
-        - podstawowe doświadczenie na start i podstawowy jego przyrost
+        - większy bazowy spryt.
+        - podstawowe doświadczenie na start i podstawowy jego przyrost.
         - podstawowy atak to "lanie wody":
-            - strzela w Profesorów losowymi słowami zadając im DMG (podstawowy DMG zmniejszony ale może trafić krytycznie)
+            - strzela w Profesorów losowymi słowami zadając im DMG (podstawowy DMG zmniejszony ale może trafić krytycznie).
     - ambitny student:
-        - większa inteligencja na start
-        - mniejsze doświadczenie na start większy przyrost
-        - podstawowy atak to "czy ktoś ma jakieś pytania?":
-            - ciska w Profesorów pytaniami zadając im DMG.
+        - większe bazowe HP
+        - mniejsze doświadczenie na start ale więcej XP z bosów.
+        - podstawowy atak to "Konsultacje":
+            - zadaje Profesorom DMG podchodząc do nich na krótki dystans.
 - Pani z żabki w roli handlarza.
 - koledzy ze starszego roku którzy działają na zasadzie skrzynki z przedmiotami. Będzie można ich spotkać w "Parku Akademickim".
 ### Przeciwnicy:
