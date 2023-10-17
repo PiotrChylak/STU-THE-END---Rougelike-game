@@ -42,7 +42,7 @@ aby podejść do sesji trzeba będzię przejść przez określoną liczbe pokoi 
 czekać na nas zarówno wrogowie jak i przyjazne jednostki.
 
 - Pokoje będą to (losowo): sale lekcyjne, aule, korytarz, park akademicki oraz żabka.
-W salach oraz aulach można znaleźć złoto za które kupimy przedmioty w żabce lub od kolegi ze starszego roku.
+W salach oraz aulach można znaleźć złoto za które kupimy przedmioty w żabce.
 
 - Po pokonaniu jednego z bosów odblokujemy możliwość wchodzenia do świata funkcji tworzących (podziemia).
 
