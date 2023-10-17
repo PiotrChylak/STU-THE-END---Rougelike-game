@@ -34,26 +34,31 @@ w zależności od wybranej klasy trochę różniący się wyglądem, cechami cha
 - koledzy ze starszego roku którzy działają na zasadzie skrzynki z przedmiotami. Będzie można ich spotkać w "Parku Akademickim".
 ### Przeciwnicy:
 - Magistrzy, najczęściej spotykany rodzaj przeciwników.
-- Doktorzy Habilitowani, będą to final bossy których będzie można spotkać po przejściu każdego etapu (Gra będzie podzielona na 6 etapów, jako każdy semestr 3 letnich studiów a po każdym semestrze czeka nas sesja czyli właśnie walka z bossem)
-- Agresywni obywatele Lublina których będzie można również spotkać w lokacji "Park Akademicki",
+- Doktorzy Habilitowani, będą to final bossy których będzie można spotkać po przejściu każdego etapu.
 ## LEVEL/ENVIROMENT DESIGN:
 - Gra będzie podzielona na 6 etapów, odpowiadające semestrom na studiach,
 a każdy z etapów będzie zakończony "sesją" (boss),
 aby podejść do sesji trzeba będzię przejść przez określoną liczbe pokoi w których mogą
 czekać na nas zarówno wrogowie jak i przyjazne jednostki.
-Pokoje będą to (losowo): sale lekcyjne, aule, korytarz, park akademicki oraz żabka.
-w jednym etapie pojawia się 3 park akademicki, 2 żabka, 7 sala lekcyjna oraz 1 aula na koniec etapu.
 
-- W parku akademickim możesz spotkać Agrsywnych obywateli Lublina (przciwnicy) lub
-kolegę ze starszego roku. Może on ci wręczyć takie przedmioty jak np:
+- Pokoje będą to (losowo): sale lekcyjne, aule, korytarz, park akademicki oraz żabka.
+W salach oraz aulach można znaleźć złoto za które kupimy przedmioty w żabce lub od kolegi ze starszego roku.
+
+- Po pokonaniu jednego z bosów odblokujemy możliwość wchodzenia do świata funkcji tworzących (podziemia).
+
+- w jednym etapie pojawia się 3 park akademicki, 2 żabka, 7 sala lekcyjna oraz 1 aula na koniec etapu.
+
+- W parku akademickim możesz spotkać kolegę ze starszego roku. Może on ci wręczyć takie przedmioty jak np:
  
     - skrypt profesora pana Kromki (+wiedza)
     - ściąga (+spryt)
     - piwo (+hp)
+    - (rzadkie) podrobione zwolnenie lekarskie (daje możliwość ucieczki z jednego pokoju "nie wliczając pokoju z bosem).
     - (rzadkie) zdjęcia egzaminów z tamtego roku 
       (+wiedza, +spryt, +hp)
     - (bardzo rzadkie i jednorozowo) dostęp do tuptupa 
       (++wiedza, ++spryt, ++hp)
+
 
 - W żabce będzie można kupić takie przedmioty jak np:
 
@@ -67,6 +72,21 @@ kolegę ze starszego roku. Może on ci wręczyć takie przedmioty jak np:
 - Gra teoretycznie kończy się po przejściu wszytskich etapów (zdaniu studiów) ale wtedy wszystkie pokoje zostą otwarte oraz opustoszałe a gracz dostanie zadanie aby "znaleźć pracę.
 
 - Bronie dostępne do zdobycia:
-    - myszka
+    - pospolite:
+        - myszka na kablu (zadaje obrażenia dookoła bohatera)
+        - patchcord (Atakuje poziomo, przechodzi przez wrogów.)
+        - kurtka (co jakiś czas zadaje pasywny DMG wszystkim w pokoju)
+    - rzadkie:
+        - pilot do projektora (na krótko unieruchamia przeciwników)
+        - notatki z wykładu (orbitują dookoła postaci)
+    - legendarne: 
+        - DSM-51 (co jakiś czas uruchamia "brzęczek" który zadaje duże obrażenia w całym pokoju, możliwy do zdobycia tylko po pokonaniu jednego, konkretnego bosa).
+    - niespotykanie rzadkie:
+        - NAND 5-wejściowy (nikt nie wie co to robi, czy to nawet istnieje?).
 
-
+## GAMEPLAY
+- Celem gracza jest przejście przez wszytskie pokoje pokonując przeciwników
+nie umierając przy tym.
+- Gdy gracz umrze grę trzeba zacząć od nowa ale będzie miał możliwość wzięcia warunku (szybkiego odrodzenia).
+Warunek można wziąć maksymalnie 2 razy na etap oraz 5 razy podczas jednej rozgrywki.
+- Ważnym elementem gry będzie zbieranie przedmiotów oraz ulepszanie broni co będzie można zrobić po wbiciu lvl.
