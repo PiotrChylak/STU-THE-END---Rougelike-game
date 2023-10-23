@@ -116,3 +116,5 @@ Warunek można wziąć maksymalnie 2 razy na etap oraz 5 razy podczas jednej roz
 - Rozwój bohatera [4] (zwiększanie statystyk, bronie, umiejętności)
 - Imersja, Klimat, Atmosfera [4] (orignalna i ciekawa tematyka)
 - Ściśle określone warunki zwycięstwa [4] (tak)
+
+### SUMA: 57 + ?
