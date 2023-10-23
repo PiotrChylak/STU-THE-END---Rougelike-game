@@ -90,3 +90,29 @@ nie umierając przy tym.
 - Gdy gracz umrze grę trzeba zacząć od nowa ale będzie miał możliwość wzięcia warunku (szybkiego odrodzenia).
 Warunek można wziąć maksymalnie 2 razy na etap oraz 5 razy podczas jednej rozgrywki.
 - Ważnym elementem gry będzie zbieranie przedmiotów oraz ulepszanie broni co będzie można zrobić po wbiciu lvl.
+
+# ANALIZA WSTĘPNA ŁOTROPODBNOŚCI:
+
+- Generowanie losowego środowiska [2] (środowisko będzie generowane losowo ale z pewnymi wytycznymi które będą ograniczały tą losowość)
+- Trwała śmierć [3] (Trwała śmierć ale będzie możliwość szybkiego odrodzenia po zdobyciu przeznaczoncyh do tego przedmiotów)
+- Turowość [3] (Gra będzie przeważnie turowa)
+- Plansza, mapa oparta o siatkę [4] (tak)
+- Niemodalność [?]
+- Złożoność [?]
+- Zarządzanie zasobami/ekwipunek [4] (zarządzanie przedmiotami oraz złotem będzie bardzo ważne)
+- Walka [4] (główny elemnt gry)
+- Eksploracja / Odkrywanie [2] 
+ 
+- Jedne gracz i jedna Postać [4]
+- Potwory podobne do bohatera [3]
+- Wyzwanie taktyczne [3]
+- Wyświetlanie ASCII [4] (gra będzie wyświetlana w ASCII)
+- Podziemia [3] (tak, ale mało rozbudowane)
+- Liczby [3] (statyski oraz inne)
+
+- Nieliniowość [?]
+- Duża zawartość [3] 
+- Losowość wyników [2] (obrażenia krtyczne, ilość złota z przeciników, przedmioty dostępne w 'skrzynakch', umiejętności do zdobycia)
+- Rozwój bohatera [4] (zwiększanie statystyk, bronie, umiejętności)
+- Imersja, Klimat, Atmosfera [4] (orignalna i ciekawa tematyka)
+- Ściśle określone warunki zwycięstwa [4] (tak)
