@@ -8,4 +8,4 @@ class Map:
         self.mapLayout = layout
 
     def check(self, x1, y1):
-        print(self.mapLayout[x1][y1].name)
+        print(self.mapLayout[x1][y1].description)

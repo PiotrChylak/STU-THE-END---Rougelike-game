@@ -2,7 +2,7 @@ class Field:
     def __init__(self):
         self.actorPointer = None
         self.itemList = None
-        self.name = None
+        self.description = None
 
 
 class Floor(Field):
@@ -10,7 +10,7 @@ class Floor(Field):
         super().__init__()
         self.character = "-"
         self.canStand = True
-        self.name = "podloga"
+        self.description = "podloga"
 
 
 class Wall(Field):
@@ -18,4 +18,4 @@ class Wall(Field):
         super().__init__()
         self.character = "#"
         self.canStand = False
-        self.name = "sciana"
+        self.description = "sciana"
