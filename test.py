@@ -35,7 +35,7 @@ for row in game_map.mapLayout:
 for x_idx, row in enumerate(game_map.mapLayout):
     for y_idx, field in enumerate(row):
         if field.actorPointer == player:
-            print(f"The player is on a {field.description} field at position ({x_idx}, {y_idx}).")
+            print(f"You are on a {field.description} field at position ({x_idx}, {y_idx}).")
 
 # Finding the enemy's location and displaying the description
 for x_idx, row in enumerate(game_map.mapLayout):
