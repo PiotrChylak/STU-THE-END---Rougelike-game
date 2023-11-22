@@ -2,18 +2,6 @@ import mapElement as mE
 import map as m
 import actor as a
 
-# mapa2D = [[mE.Wall(), mE.Floor()],
-#           [mE.Wall(), mE.Floor()],
-#           [mE.Wall(), mE.Floor()]]
-#
-# mapa = m.Map(3, 2, mapa2D)
-#
-# mapa.check(0,0)
-
-import random  # Importing random for generating a random map layout
-
-# Your existing classes...
-
 # Creating a simple map
 map_layout = [
     [mE.Wall(), mE.Wall(), mE.Wall(), mE.Wall(), mE.Wall()],
@@ -48,6 +36,12 @@ for x_idx, row in enumerate(game_map.mapLayout):
     for y_idx, field in enumerate(row):
         if field.actorPointer == player:
             print(f"The player is on a {field.description} field at position ({x_idx}, {y_idx}).")
+
+# Finding the enemy's location and displaying the description
+for x_idx, row in enumerate(game_map.mapLayout):
+    for y_idx, field in enumerate(row):
+        if field.actorPointer == enemy:
+            print(f"The enemy is on a {field.description} field at position ({x_idx}, {y_idx}).")
 
 
 
