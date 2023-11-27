@@ -3,6 +3,7 @@ class Field:
         self.actorPointer = None
         self.itemList = None
         self.description = None
+        self.itemPointer = None
 
 
 class Floor(Field):
