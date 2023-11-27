@@ -1,4 +1,6 @@
 import mapElement as mE
+import actor as a
+import item
 
 
 class Map:
@@ -14,9 +16,17 @@ class Map:
     def add_object(self, obj, x, y):
         if 0 <= x < self.x and 0 <= y < self.y:
             if self.occupied[x][y] is None:
-                self.mapLayout[x][y].actorPointer = obj
-                self.occupied[x][y] = obj
+                if isinstance(obj, a.Enemy) or isinstance(obj, a.Player):
+                    self.mapLayout[x][y].actorPointer = obj
+                    self.occupied[x][y] = obj
+                elif isinstance(obj, item.Item):
+                    self.mapLayout[x][y].itemPointer = obj
+                    obj.itemPointer = obj  # Ustawienie wskaźnika
+                else:
+                    print("Invalid object type.")
             else:
-                print(f"cannot place an object on the field ({x}, {y}). the field is already occupied.")
+                print(f"Cannot place an object on the field ({x}, {y}). The field is already occupied.")
         else:
-            print("invalid coordinate provided")
+            print("Invalid coordinate provided.")
+
+#    def delete_object(self, obj, x, y):

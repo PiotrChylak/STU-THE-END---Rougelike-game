@@ -1,7 +1,7 @@
 class Actor:
     def __init__(self, hp, dmg):
-        self.hp = hp
-        self.dmg = dmg
+        self.base_hp = hp
+        self.base_dmg = dmg
         self.inventory = []
 
     def equip_item(self, item):
@@ -21,12 +21,13 @@ class Player(Actor):
     def __init__(self, hp, dmg):
         super().__init__(hp, dmg)
         self.character = "@"
-        self.base_hp = hp
-        self.base_dmg = dmg
+        self.hp = hp
+        self.dmg = dmg
 
 
 class Enemy(Actor):
-    def __init__(self, hp, dmg):
+    def __init__(self, hp, dmg, name):
         super().__init__(hp, dmg)
+        self.name = name
         self.character = "!"
 

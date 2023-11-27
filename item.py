@@ -5,3 +5,4 @@ class Item:
         self.description = f"item: {name}"
         self.hp_bonus = hp_bonus
         self.dmg_bonus = dmg_bonus
+        self.itemPointer = None

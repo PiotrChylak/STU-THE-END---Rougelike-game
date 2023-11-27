@@ -11,7 +11,7 @@ class Floor(Field):
         super().__init__()
         self.character = "-"
         self.canStand = True
-        self.description = "podloga"
+        self.description = "floor"
 
 
 class Wall(Field):
@@ -19,4 +19,4 @@ class Wall(Field):
         super().__init__()
         self.character = "#"
         self.canStand = False
-        self.description = "sciana"
+        self.description = "wall"
