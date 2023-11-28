@@ -39,12 +39,6 @@ game_map.add_object(enemy2, 6, 6)
 enemy3 = a.Enemy(hp=10, dmg=10, name="monke")
 game_map.add_object(enemy3, 1, 1)
 
-# game_map.mapLayout[1][1].actorPointer = player
-# game_map.mapLayout[3][3].actorPointer = enemy
-# game_map.mapLayout[2][2].itemPointer = item1
-# game_map.mapLayout[1][3].itemPointer = item4
-
-
 # wyswietlanie mapy
 for row in game_map.mapLayout:
     for field in row:
@@ -72,3 +66,17 @@ for x_idx, row in enumerate(game_map.mapLayout):
             print_position_info(x_idx, y_idx, item1.description)
         if field.itemPointer == item4:
             print_position_info(x_idx, y_idx, item4.description)
+
+game_map.remove_object(1, 3)
+game_map.remove_object(3, 3)
+
+for row in game_map.mapLayout:
+    for field in row:
+        if field.actorPointer:
+            print(field.actorPointer.character, end=' ')
+        elif field.itemPointer:
+            print(field.itemPointer.character, end=' ')
+        else:
+            print(field.character, end=' ')
+    print()
+

@@ -21,7 +21,7 @@ class Map:
                     self.occupied[x][y] = obj
                 elif isinstance(obj, item.Item):
                     self.mapLayout[x][y].itemPointer = obj
-                    obj.itemPointer = obj  # Ustawienie wskaźnika
+                    obj.itemPointer = obj
                 else:
                     print("Invalid object type.")
             else:
@@ -29,4 +29,17 @@ class Map:
         else:
             print("Invalid coordinate provided.")
 
-#    def delete_object(self, obj, x, y):
+    def remove_object(self, x, y):
+        if 0 <= x < self.x and 0 <= y < self.y:
+            if self.mapLayout[x][y].actorPointer and isinstance(self.mapLayout[x][y].actorPointer, a.Enemy):
+                print(f"Enemy {self.mapLayout[x][y].actorPointer.name} removed from position ({x}, {y}).")
+                self.mapLayout[x][y].actorPointer = None
+                self.occupied[x][y] = None
+            elif self.mapLayout[x][y].itemPointer and isinstance(self.mapLayout[x][y].itemPointer, item.Item):
+                print(f"Item {self.mapLayout[x][y].itemPointer.description} removed from position ({x}, {y}).")
+                self.mapLayout[x][y].itemPointer = None
+            else:
+                print("No object to remove at this position.")
+        else:
+            print("Invalid coordinate provided.")
+
