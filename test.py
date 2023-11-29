@@ -1,4 +1,3 @@
-import item
 import mapElement as mE
 import map as m
 import actor as a
@@ -22,15 +21,15 @@ enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
 game_map.add_object(enemy1, 3, 3)
 
 # tworzenie przedmiotu
-item1 = i.Item("Sword", 0, 2)
+item1 = i.Item("Sword", 0, 2,0)
 game_map.add_object(item1, 2, 2)
 
-item4 = i.Item("Big Sword", 0, 10)
+item4 = i.Item("Big Sword", 0, 4, -1)
 game_map.add_object(item4, 1, 3)
 
-# tworzenie obiektow ktore nie moga zostac dodane
-item2 = i.Item("Shield", 20, 0)
-item3 = i.Item("Helmet", 10, 5)
+# tworzenie obiektow ktore nie moga zostac dodane do mapy
+item2 = i.Item("Shield", 20, 0, 0)
+item3 = i.Item("Helmet", 10, 5, 0)
 game_map.add_object(item2, 5, 5)
 game_map.add_object(item3, 3, 3)
 
@@ -39,16 +38,20 @@ game_map.add_object(enemy2, 6, 6)
 enemy3 = a.Enemy(hp=10, dmg=10, name="monke", initiative=10)
 game_map.add_object(enemy3, 1, 1)
 
-# wyswietlanie mapy
-for row in game_map.mapLayout:
-    for field in row:
-        if field.actorPointer:
-            print(field.actorPointer.character, end=' ')
-        elif field.itemPointer:
-            print(field.itemPointer.character, end=' ')
-        else:
-            print(field.character, end=' ')
-    print()
+
+def print_map():
+    for row in game_map.mapLayout:
+        for field in row:
+            if field.actorPointer:
+                print(field.actorPointer.character, end=' ')
+            elif field.itemPointer:
+                print(field.itemPointer.character, end=' ')
+            else:
+                print(field.character, end=' ')
+        print()
+
+
+print_map()
 
 
 # Wyswietlanie informacji o polozeniu gracza, przeciwnika i przedmiotu
@@ -69,63 +72,34 @@ for x_idx, row in enumerate(game_map.mapLayout):
 
 game_map.remove_object(1, 3)
 
-for row in game_map.mapLayout:
-    for field in row:
-        if field.actorPointer:
-            print(field.actorPointer.character, end=' ')
-        elif field.itemPointer:
-            print(field.itemPointer.character, end=' ')
+print_map()
+
+
+def test_combat(hero, enemy, item, iterations=1000):
+    player_wins = 0
+    enemy_wins = 0
+
+    for _ in range(iterations):
+        player_copy = a.Player(hero.hp, hero.dmg, hero.initiative)
+        player_copy.equip_item(item1)
+        player_copy.update_stats()
+        enemy_copy = a.Enemy(enemy.hp, enemy.dmg, enemy.name, enemy.initiative)
+
+        result = a.simulate_combat(player_copy, enemy_copy)
+        if result == player_copy:
+            player_wins += 1
         else:
-            print(field.character, end=' ')
-    print()
+            enemy_wins += 1
 
-player_wins = 0
-enemy_wins = 0
-
-for _ in range(1000):
-    player = a.Player(hp=100, dmg=10, initiative=2)
-    enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
-
-    result = game_map.combat(player, enemy1)
-    if result == player:
-        player_wins += 1
-    else:
-        enemy_wins += 1
-
-print(f"Hero wins {player_wins} times with {enemy1.name}")
-print(f"{enemy1.name} wins {enemy_wins} times with Hero")
-
-player_with_item_wins = 0
-enemy_wins = 0
-
-for _ in range(1000):
-    player = a.Player(hp=100, dmg=10, initiative=2)
-    player.equip_item(item1)
-    player.update_stats()
-    enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
-
-    result = game_map.combat(player, enemy1)
-    if result == player:
-        player_with_item_wins += 1
-    else:
-        enemy_wins += 1
-
-print(f"Hero with {item1.name} wins {player_with_item_wins} times with {enemy1.name}")
-print(f"{enemy1.name} wins {enemy_wins} times with Hero with {item1.name}")
+    print(f"Hero with {item.name} wins {player_wins} times with {enemy.name}")
+    print(f"{enemy.name} wins {enemy_wins} times with Hero with {item.name}\n")
 
 
-player1_wins = 0
-enemy1_wins = 0
+item_0 = i.Item("no item", 0, 0, 0)
 
-for _ in range(1000):
-    player = a.Player(hp=100, dmg=10, initiative=2)
-    enemy3 = a.Enemy(hp=10, dmg=10, name="monke", initiative=7)
-
-    result = game_map.combat(player, enemy3)
-    if result == player:
-        player1_wins += 1
-    else:
-        enemy1_wins += 1
-
-print(f"Hero wins {player1_wins} times with {enemy3.name}")
-print(f"{enemy3.name} wins {enemy1_wins} times with Hero")
+test_combat(player, enemy1, item_0, 1000)
+test_combat(player, enemy2, item_0, 1000)
+test_combat(player, enemy3, item_0, 1000)
+test_combat(player, enemy1, item1, 1000)
+test_combat(player, enemy2, item1, 1000)
+test_combat(player, enemy3, item1, 1000)
