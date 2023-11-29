@@ -36,7 +36,7 @@ game_map.add_object(item3, 3, 3)
 
 enemy2 = a.Enemy(hp=100, dmg=30, name="Vampire", initiative=10)
 game_map.add_object(enemy2, 6, 6)
-enemy3 = a.Enemy(hp=10, dmg=10, name="monke", initiative=13)
+enemy3 = a.Enemy(hp=10, dmg=10, name="monke", initiative=10)
 game_map.add_object(enemy3, 1, 1)
 
 # wyswietlanie mapy
@@ -92,6 +92,40 @@ for _ in range(1000):
     else:
         enemy_wins += 1
 
-print(f"Bohater wygrał {player_wins} razy.")
-print(f"Przeciwnik wygrał {enemy_wins} razy.")
+print(f"Hero wins {player_wins} times with {enemy1.name}")
+print(f"{enemy1.name} wins {enemy_wins} times with Hero")
 
+player_with_item_wins = 0
+enemy_wins = 0
+
+for _ in range(1000):
+    player = a.Player(hp=100, dmg=10, initiative=2)
+    player.equip_item(item1)
+    player.update_stats()
+    enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
+
+    result = game_map.combat(player, enemy1)
+    if result == player:
+        player_with_item_wins += 1
+    else:
+        enemy_wins += 1
+
+print(f"Hero wins {player_with_item_wins} times with {enemy1.name}")
+print(f"{enemy1.name} wins {enemy_wins} times with Hero")
+
+
+player1_wins = 0
+enemy1_wins = 0
+
+for _ in range(1000):
+    player = a.Player(hp=100, dmg=10, initiative=2)
+    enemy3 = a.Enemy(hp=10, dmg=10, name="monke", initiative=7)
+
+    result = game_map.combat(player, enemy3)
+    if result == player:
+        player1_wins += 1
+    else:
+        enemy1_wins += 1
+
+print(f"Hero wins {player1_wins} times with {enemy3.name}")
+print(f"{enemy3.name} wins {enemy1_wins} times with Hero")
