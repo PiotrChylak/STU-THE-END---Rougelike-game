@@ -15,10 +15,10 @@ map_layout = [
 game_map = m.Map(5, 5, map_layout)
 
 # tworzenie oraz dodawanie gracza i przeciwnika
-player = a.Player(hp=100, dmg=10)
+player = a.Player(hp=100, dmg=10, initiative=2)
 game_map.add_object(player, 1, 1)
 
-enemy1 = a.Enemy(hp=50, dmg=5, name = "Ghost")
+enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
 game_map.add_object(enemy1, 3, 3)
 
 # tworzenie przedmiotu
@@ -34,9 +34,9 @@ item3 = i.Item("Helmet", 10, 5)
 game_map.add_object(item2, 5, 5)
 game_map.add_object(item3, 3, 3)
 
-enemy2 = a.Enemy(hp=100, dmg=30, name="Vampire")
+enemy2 = a.Enemy(hp=100, dmg=30, name="Vampire", initiative=10)
 game_map.add_object(enemy2, 6, 6)
-enemy3 = a.Enemy(hp=10, dmg=10, name="monke")
+enemy3 = a.Enemy(hp=10, dmg=10, name="monke", initiative=13)
 game_map.add_object(enemy3, 1, 1)
 
 # wyswietlanie mapy
@@ -68,7 +68,6 @@ for x_idx, row in enumerate(game_map.mapLayout):
             print_position_info(x_idx, y_idx, item4.description)
 
 game_map.remove_object(1, 3)
-game_map.remove_object(3, 3)
 
 for row in game_map.mapLayout:
     for field in row:
@@ -79,4 +78,20 @@ for row in game_map.mapLayout:
         else:
             print(field.character, end=' ')
     print()
+
+player_wins = 0
+enemy_wins = 0
+
+for _ in range(1000):
+    player = a.Player(hp=100, dmg=10, initiative=2)
+    enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
+
+    result = game_map.combat(player, enemy1)
+    if result == player:
+        player_wins += 1
+    else:
+        enemy_wins += 1
+
+print(f"Bohater wygrał {player_wins} razy.")
+print(f"Przeciwnik wygrał {enemy_wins} razy.")
 

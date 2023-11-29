@@ -1,6 +1,7 @@
 import mapElement as mE
 import actor as a
 import item
+import random
 
 
 class Map:
@@ -43,3 +44,32 @@ class Map:
         else:
             print("Invalid coordinate provided.")
 
+    def combat(self, player, enemy):
+        while player.hp > 0 and enemy.hp > 0:
+            hero_initiative = random.randint(1, 20) + player.initiative
+            enemy_initiative = random.randint(1, 20) + enemy.initiative
+
+            if hero_initiative >= enemy_initiative:
+                attacker = player
+                defender = enemy
+            else:
+                attacker = enemy
+                defender = player
+
+            attack_roll = random.randint(1, 20) + attacker.dmg
+            if attack_roll >= 16:
+                damage_roll = random.randint(1, 6) + attacker.dmg
+                defender.hp -= damage_roll
+
+                # print(f"{attacker.name} dealing {damage_roll} dmg to {defender.name}.")
+                if defender.hp <= 0:
+                    # print(f"{defender.name} died!")
+                    return attacker
+            else:
+                # print(f"{attacker.name} missed.")
+                continue
+
+            if player.hp <= 0:
+                return enemy
+            elif enemy.hp <= 0:
+                return player

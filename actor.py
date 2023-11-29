@@ -18,16 +18,21 @@ class Actor:
 
 
 class Player(Actor):
-    def __init__(self, hp, dmg):
+    def __init__(self, hp, dmg, initiative):
         super().__init__(hp, dmg)
-        self.character = "@"
-        self.hp = hp
         self.dmg = dmg
+        self.hp = hp
+        self.name = "HERO"
+        self.character = "@"
+        self.initiative = initiative
 
 
 class Enemy(Actor):
-    def __init__(self, hp, dmg, name):
+    def __init__(self, hp, dmg, name, initiative):
         super().__init__(hp, dmg)
+        self.dmg = dmg
+        self.hp = hp
         self.name = name
         self.character = "!"
+        self.initiative = initiative
 
