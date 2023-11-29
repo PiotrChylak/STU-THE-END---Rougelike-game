@@ -86,7 +86,7 @@ for j in range(1000):
     player = a.Player(hp=100, dmg=10, initiative=2)
     enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
 
-    result = game_map.combat(player, enemy1)
+    result = a.simulate_combat(player, enemy1)
     if result == player:
         player_wins += 1
     else:
@@ -104,7 +104,7 @@ for j in range(1000):
     player.update_stats()
     enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
 
-    result = game_map.combat(player, enemy1)
+    result = a.simulate_combat(player, enemy1)
     if result == player:
         player_with_item_wins += 1
     else:
@@ -120,7 +120,7 @@ for j in range(1000):
     player = a.Player(hp=100, dmg=10, initiative=2)
     enemy3 = a.Enemy(hp=10, dmg=10, name="monke", initiative=7)
 
-    result = game_map.combat(player, enemy3)
+    result = a.simulate_combat(player, enemy3)
     if result == player:
         player1_wins += 1
     else:
@@ -138,7 +138,7 @@ for j in range(1000):
     player.update_stats()
     enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
 
-    result = game_map.combat(player, enemy1)
+    result = a.simulate_combat(player, enemy1)
     if result == player:
         player_with_item_wins += 1
     else:

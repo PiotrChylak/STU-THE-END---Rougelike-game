@@ -1,3 +1,6 @@
+import random
+
+
 class Actor:
     def __init__(self, hp, dmg, initiative):
         self.hp = hp
@@ -37,4 +40,39 @@ class Enemy(Actor):
         self.name = name
         self.character = "!"
         self.initiative = initiative
+
+
+def single_attack(attacker, defender):
+    hero_initiative = random.randint(1, 20) + attacker.initiative
+    enemy_initiative = random.randint(1, 20) + defender.initiative
+
+    if hero_initiative >= enemy_initiative:
+        current_attacker = attacker
+        current_defender = defender
+    else:
+        current_attacker = defender
+        current_defender = attacker
+
+    attack_roll = random.randint(1, 20) + current_attacker.dmg
+    if attack_roll >= 16:
+        damage_roll = random.randint(1, 6) + current_attacker.dmg
+        current_defender.hp -= damage_roll
+
+    #     if current_defender.hp <= 0:
+    #         print(f"{current_attacker.name} dealing {damage_roll} dmg to {current_defender.name}.")
+    #         print(f"{current_defender.name} died!")
+    #     else:
+    #         print(f"{current_attacker.name} dealing {damage_roll} dmg to {current_defender.name}.")
+    # else:
+    #     print(f"{current_attacker.name} missed.")
+
+
+def simulate_combat(player, enemy):
+    while player.hp > 0 and enemy.hp > 0:
+        single_attack(player, enemy)
+        if enemy.hp <= 0:
+            return player
+        elif player.hp <= 0:
+            return enemy
+        player, enemy = enemy, player
 
