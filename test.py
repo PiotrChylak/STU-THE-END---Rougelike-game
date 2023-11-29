@@ -1,4 +1,3 @@
-import item
 import mapElement as mE
 import map as m
 import actor as a
@@ -79,70 +78,33 @@ for row in game_map.mapLayout:
             print(field.character, end=' ')
     print()
 
-player_wins = 0
-enemy_wins = 0
 
-for j in range(1000):
-    player = a.Player(hp=100, dmg=10, initiative=2)
-    enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
+def test_combat(hero, enemy, item, iterations=1000):
+    player_wins = 0
+    enemy_wins = 0
 
-    result = a.simulate_combat(player, enemy1)
-    if result == player:
-        player_wins += 1
-    else:
-        enemy_wins += 1
+    for _ in range(iterations):
+        player_copy = a.Player(hero.hp, hero.dmg, hero.initiative)
+        player_copy.equip_item(item1)
+        player_copy.update_stats()
+        enemy_copy = a.Enemy(enemy.hp, enemy.dmg, enemy.name, enemy.initiative)
 
-print(f"Hero wins {player_wins} times with {enemy1.name}")
-print(f"{enemy1.name} wins {enemy_wins} times with Hero\n")
+        result = a.simulate_combat(player_copy, enemy_copy)
+        if result == player_copy:
+            player_wins += 1
+        else:
+            enemy_wins += 1
 
-player_with_item_wins = 0
-enemy_wins = 0
+    print(f"Hero with {item.name} wins {player_wins} times with {enemy.name}")
+    print(f"{enemy.name} wins {enemy_wins} times with Hero with {item.name}\n")
 
-for j in range(1000):
-    player = a.Player(hp=100, dmg=10, initiative=2)
-    player.equip_item(item1)
-    player.update_stats()
-    enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
 
-    result = a.simulate_combat(player, enemy1)
-    if result == player:
-        player_with_item_wins += 1
-    else:
-        enemy_wins += 1
+item_0 = i.Item("no item", 0, 0, 0)
 
-print(f"Hero with {item1.name} wins {player_with_item_wins} times with {enemy1.name}")
-print(f"{enemy1.name} wins {enemy_wins} times with Hero with {item1.name}\n")
+test_combat(player, enemy1, item_0, 1000)
+test_combat(player, enemy2, item_0, 1000)
+test_combat(player, enemy3, item_0, 1000)
+test_combat(player, enemy1, item1, 1000)
+test_combat(player, enemy2, item1, 1000)
+test_combat(player, enemy3, item1, 1000)
 
-player1_wins = 0
-enemy1_wins = 0
-
-for j in range(1000):
-    player = a.Player(hp=100, dmg=10, initiative=2)
-    enemy3 = a.Enemy(hp=10, dmg=10, name="monke", initiative=7)
-
-    result = a.simulate_combat(player, enemy3)
-    if result == player:
-        player1_wins += 1
-    else:
-        enemy1_wins += 1
-
-print(f"Hero wins {player1_wins} times with {enemy3.name}")
-print(f"{enemy3.name} wins {enemy1_wins} times with Hero\n")
-
-player_with_item_wins = 0
-enemy_wins = 0
-
-for j in range(1000):
-    player = a.Player(hp=100, dmg=10, initiative=2)
-    player.equip_item(item4)
-    player.update_stats()
-    enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
-
-    result = a.simulate_combat(player, enemy1)
-    if result == player:
-        player_with_item_wins += 1
-    else:
-        enemy_wins += 1
-
-print(f"Hero with {item4.name} wins {player_with_item_wins} times with {enemy1.name}")
-print(f"{enemy1.name} wins {enemy_wins} times with Hero with {item4.name}\n")
