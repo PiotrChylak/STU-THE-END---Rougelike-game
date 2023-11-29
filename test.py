@@ -22,7 +22,7 @@ enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
 game_map.add_object(enemy1, 3, 3)
 
 # tworzenie przedmiotu
-item1 = i.Item("Sword", 0, 5)
+item1 = i.Item("Sword", 0, 2)
 game_map.add_object(item1, 2, 2)
 
 item4 = i.Item("Big Sword", 0, 10)
@@ -110,8 +110,8 @@ for _ in range(1000):
     else:
         enemy_wins += 1
 
-print(f"Hero wins {player_with_item_wins} times with {enemy1.name}")
-print(f"{enemy1.name} wins {enemy_wins} times with Hero")
+print(f"Hero with {item1.name} wins {player_with_item_wins} times with {enemy1.name}")
+print(f"{enemy1.name} wins {enemy_wins} times with Hero with {item1.name}")
 
 
 player1_wins = 0
