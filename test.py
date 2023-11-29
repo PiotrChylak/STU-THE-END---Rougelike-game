@@ -22,15 +22,15 @@ enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
 game_map.add_object(enemy1, 3, 3)
 
 # tworzenie przedmiotu
-item1 = i.Item("Sword", 0, 2)
+item1 = i.Item("Sword", 0, 2,0)
 game_map.add_object(item1, 2, 2)
 
-item4 = i.Item("Big Sword", 0, 10)
+item4 = i.Item("Big Sword", 0, 4, -1)
 game_map.add_object(item4, 1, 3)
 
 # tworzenie obiektow ktore nie moga zostac dodane
-item2 = i.Item("Shield", 20, 0)
-item3 = i.Item("Helmet", 10, 5)
+item2 = i.Item("Shield", 20, 0, 0)
+item3 = i.Item("Helmet", 10, 5, 0)
 game_map.add_object(item2, 5, 5)
 game_map.add_object(item3, 3, 3)
 
@@ -82,7 +82,7 @@ for row in game_map.mapLayout:
 player_wins = 0
 enemy_wins = 0
 
-for _ in range(1000):
+for j in range(1000):
     player = a.Player(hp=100, dmg=10, initiative=2)
     enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
 
@@ -93,12 +93,12 @@ for _ in range(1000):
         enemy_wins += 1
 
 print(f"Hero wins {player_wins} times with {enemy1.name}")
-print(f"{enemy1.name} wins {enemy_wins} times with Hero")
+print(f"{enemy1.name} wins {enemy_wins} times with Hero\n")
 
 player_with_item_wins = 0
 enemy_wins = 0
 
-for _ in range(1000):
+for j in range(1000):
     player = a.Player(hp=100, dmg=10, initiative=2)
     player.equip_item(item1)
     player.update_stats()
@@ -111,13 +111,12 @@ for _ in range(1000):
         enemy_wins += 1
 
 print(f"Hero with {item1.name} wins {player_with_item_wins} times with {enemy1.name}")
-print(f"{enemy1.name} wins {enemy_wins} times with Hero with {item1.name}")
-
+print(f"{enemy1.name} wins {enemy_wins} times with Hero with {item1.name}\n")
 
 player1_wins = 0
 enemy1_wins = 0
 
-for _ in range(1000):
+for j in range(1000):
     player = a.Player(hp=100, dmg=10, initiative=2)
     enemy3 = a.Enemy(hp=10, dmg=10, name="monke", initiative=7)
 
@@ -128,4 +127,22 @@ for _ in range(1000):
         enemy1_wins += 1
 
 print(f"Hero wins {player1_wins} times with {enemy3.name}")
-print(f"{enemy3.name} wins {enemy1_wins} times with Hero")
+print(f"{enemy3.name} wins {enemy1_wins} times with Hero\n")
+
+player_with_item_wins = 0
+enemy_wins = 0
+
+for j in range(1000):
+    player = a.Player(hp=100, dmg=10, initiative=2)
+    player.equip_item(item4)
+    player.update_stats()
+    enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
+
+    result = game_map.combat(player, enemy1)
+    if result == player:
+        player_with_item_wins += 1
+    else:
+        enemy_wins += 1
+
+print(f"Hero with {item4.name} wins {player_with_item_wins} times with {enemy1.name}")
+print(f"{enemy1.name} wins {enemy_wins} times with Hero with {item4.name}\n")
