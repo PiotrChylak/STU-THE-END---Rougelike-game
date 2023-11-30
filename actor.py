@@ -7,6 +7,7 @@ class Actor:
         self.dmg = dmg
         self.initiative = initiative
         self.inventory = []
+        self.is_alive = True
 
     def equip_item(self, item):
         self.inventory.append(item)
@@ -42,16 +43,21 @@ class Enemy(Actor):
         self.initiative = initiative
 
 
-def single_attack(attacker, defender):
-    hero_initiative = random.randint(1, 20) + attacker.initiative
-    enemy_initiative = random.randint(1, 20) + defender.initiative
+def update_status(self):
+    if self.hp <= 0:
+        self.is_alive = False
+
+
+def single_attack(player, enemy):
+    hero_initiative = random.randint(1, 20) + player.initiative
+    enemy_initiative = random.randint(1, 20) + enemy.initiative
 
     if hero_initiative >= enemy_initiative:
-        current_attacker = attacker
-        current_defender = defender
+        current_attacker = player
+        current_defender = enemy
     else:
-        current_attacker = defender
-        current_defender = attacker
+        current_attacker = enemy
+        current_defender = player
 
     attack_roll = random.randint(1, 20) + current_attacker.dmg
     if attack_roll >= 16:
@@ -74,5 +80,4 @@ def simulate_combat(player, enemy):
             return player
         elif player.hp <= 0:
             return enemy
-        player, enemy = enemy, player
-
+        # player, enemy = enemy, player

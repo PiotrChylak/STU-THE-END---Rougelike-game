@@ -1,7 +1,5 @@
-import mapElement as mE
 import actor as a
 import item
-import random
 
 
 class Map:
@@ -43,4 +41,3 @@ class Map:
                 print("No object to remove at this position.")
         else:
             print("Invalid coordinate provided.")
-
