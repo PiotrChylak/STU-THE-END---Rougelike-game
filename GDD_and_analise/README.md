@@ -90,3 +90,14 @@ nie umierając przy tym.
 - Gdy gracz umrze grę trzeba zacząć od nowa ale będzie miał możliwość wzięcia warunku (szybkiego odrodzenia).
 Warunek można wziąć maksymalnie 2 razy na etap oraz 5 razy podczas jednej rozgrywki.
 - Ważnym elementem gry będzie zbieranie przedmiotów oraz ulepszanie broni co będzie można zrobić po wbiciu lvl.
+
+### COMBAT SYSTEM
+Cechami liczącymi się w walce są:
+- obrażenia
+- punkty życia
+- inicjatywa
+
+To kto wykonuje atak jest uzależnione od wartości inicjatywy oraz rzutu 20 ścienną kostką aby nadać temu losowości i niepowtarzalności w wynikach. Następnie liczony jest "attack roll" czyli wartość ataku jednostki która wykonuje atak plus wartość rzutu 20 ścienną kostką, jeśli wartość "attack roll" przekracza np. 16 wtedy atak wykona się i zadane zostaną obrażenia istocie broniącej (dmg jednostki + wartość rzutu 6 ścienną kostką), natomiast jeśli "atak roll" nie przekroczy podanej wartości wtedy istota broniąca się wykona unik.
+
+W późniejszych etapach tworzenia gry dodane zostaną dodatkowe cechy liczące się w walce, to kto wykona pierwszy atak będzie uzależnione od tego kto zainicjował walkę oraz wartość z którą porównujemy "atak roll" będzie zależna od zręczności przeciwnika.
+
