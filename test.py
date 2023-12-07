@@ -28,7 +28,7 @@ game_map.add_object(enemy3, 1, 1)
 # przeciwnik ktory w pojedynke nie stanowi zadnego zagrozenia dla gracza
 enemy4 = a.Enemy(hp=35, dmg=6, name="small wolf", initiative=2)
 # przeciwnik ktory jest duzym wyzwaniem dla bohatera
-enemy5 = a.Enemy(hp=110, dmg=15, name="Dark Knight", initiative=3)
+enemy5 = a.Enemy(hp=100, dmg=15, name="Dark Knight", initiative=3)
 
 item1 = i.Item("Sword", 0, 2, 0)
 game_map.add_object(item1, 2, 2)
@@ -92,27 +92,39 @@ def test_combat(hero, enemy, item, iterations=1000):
             player_wins += 1
         else:
             enemy_wins += 1
+    if player_wins < 40:
+        print("Almost Impossible to win")
+    if 40 <= player_wins < 200:
+        print("Heroic")
+    if 200 <= player_wins < 400:
+        print("Hard")
+    if 400 <= player_wins < 600:
+        print("50/50")
+    if 600 <= player_wins < 900:
+        print("Easy")
+    if 900 <= player_wins <= 1000:
+        print("Almost Impossible to lose")
 
     print(f"Hero with {item.name} wins {player_wins} times with {enemy.name}")
     print(f"{enemy.name} wins {enemy_wins} times with Hero with {item.name}\n")
 
 
 test_combat(player, enemy1, item_0, 1000)
-test_combat(player, enemy1, item4, 1000)
-test_combat(player, enemy1, item1, 1000)
+# test_combat(player, enemy1, item4, 1000)
+# test_combat(player, enemy1, item1, 1000)
 
 test_combat(player, enemy2, item_0, 1000)
-test_combat(player, enemy2, item1, 1000)
-test_combat(player, enemy2, item4, 1000)
+# test_combat(player, enemy2, item1, 1000)
+# test_combat(player, enemy2, item4, 1000)
 
 test_combat(player, enemy3, item_0, 1000)
-test_combat(player, enemy3, item1, 1000)
-test_combat(player, enemy3, item4, 1000)
+# test_combat(player, enemy3, item1, 1000)
+# test_combat(player, enemy3, item4, 1000)
 
 test_combat(player, enemy4, item_0, 1000)
-test_combat(player, enemy4, item1, 1000)
-test_combat(player, enemy4, item4, 1000)
+# (player, enemy4, item1, 1000)
+# test_combat(player, enemy4, item4, 1000)
 
 test_combat(player, enemy5, item_0, 1000)
-test_combat(player, enemy5, item1, 1000)
-test_combat(player, enemy5, item4, 1000)
+# test_combat(player, enemy5, item1, 1000)
+# test_combat(player, enemy5, item4, 1000)
