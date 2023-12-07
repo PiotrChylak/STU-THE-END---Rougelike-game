@@ -80,4 +80,4 @@ def simulate_combat(player, enemy):
             return player
         elif player.hp <= 0:
             return enemy
-        # player, enemy = enemy, player
+        player, enemy = enemy, player # linia sprawiajaca ze w kazdej kolejce najpierw atakuje gracz a nastepnie przeciwnik

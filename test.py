@@ -16,25 +16,31 @@ game_map = m.Map(5, 5, map_layout)
 player = a.Player(hp=100, dmg=10, initiative=2)
 game_map.add_object(player, 1, 1)
 
+# przeciwnik rowny z bohaterem
 enemy1 = a.Enemy(hp=100, dmg=10, name="Ghost", initiative=2)
 game_map.add_object(enemy1, 3, 3)
+# przeciwnik z którym bohater nie ma praktycznie żadnych szans na początku
+enemy2 = a.Enemy(hp=120, dmg=20, name="Vampire", initiative=5)
+game_map.add_object(enemy2, 6, 6)
+# przecinik który raczej przegrywa z bohaterem
+enemy3 = a.Enemy(hp=15, dmg=6, name="monke", initiative=10)
+game_map.add_object(enemy3, 1, 1)
+# przeciwnik ktory w pojedynke nie stanowi zadnego zagrozenia dla gracza
+enemy4 = a.Enemy(hp=35, dmg=6, name="small wolf", initiative=2)
+# przeciwnik ktory jest duzym wyzwaniem dla bohatera
+enemy5 = a.Enemy(hp=110, dmg=15, name="Dark Knight", initiative=3)
 
 item1 = i.Item("Sword", 0, 2, 0)
 game_map.add_object(item1, 2, 2)
 
-item4 = i.Item("Big Sword", 0, 4, -2)
+item4 = i.Item("Big Sword", 0, 7, -2)
 game_map.add_object(item4, 1, 3)
 
+item_0 = i.Item("no item", 0, 0, 0)
 item2 = i.Item("Shield", 20, 0, 0)
 item3 = i.Item("Helmet", 10, 5, 0)
 game_map.add_object(item2, 5, 5)
 game_map.add_object(item3, 3, 3)
-
-enemy2 = a.Enemy(hp=120, dmg=25, name="Vampire", initiative=7)
-game_map.add_object(enemy2, 6, 6)
-enemy3 = a.Enemy(hp=10, dmg=10, name="monke", initiative=10)
-game_map.add_object(enemy3, 1, 1)
-
 
 def print_map():
     for r in game_map.mapLayout:
@@ -91,16 +97,22 @@ def test_combat(hero, enemy, item, iterations=1000):
     print(f"{enemy.name} wins {enemy_wins} times with Hero with {item.name}\n")
 
 
-item_0 = i.Item("no item", 0, 0, 0)
-
 test_combat(player, enemy1, item_0, 1000)
-test_combat(player, enemy2, item_0, 1000)
-test_combat(player, enemy3, item_0, 1000)
-
-test_combat(player, enemy1, item1, 1000)
-test_combat(player, enemy2, item1, 1000)
-test_combat(player, enemy3, item1, 1000)
-
 test_combat(player, enemy1, item4, 1000)
+test_combat(player, enemy1, item1, 1000)
+
+test_combat(player, enemy2, item_0, 1000)
+test_combat(player, enemy2, item1, 1000)
 test_combat(player, enemy2, item4, 1000)
+
+test_combat(player, enemy3, item_0, 1000)
+test_combat(player, enemy3, item1, 1000)
 test_combat(player, enemy3, item4, 1000)
+
+test_combat(player, enemy4, item_0, 1000)
+test_combat(player, enemy4, item1, 1000)
+test_combat(player, enemy4, item4, 1000)
+
+test_combat(player, enemy5, item_0, 1000)
+test_combat(player, enemy5, item1, 1000)
+test_combat(player, enemy5, item4, 1000)
