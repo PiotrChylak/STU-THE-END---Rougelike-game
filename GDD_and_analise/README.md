@@ -86,10 +86,15 @@ W salach oraz aulach można znaleźć złoto za które kupimy przedmioty w żabc
 
 ## GENEROWANIE MAPY
 - Do funkcji generowania mapy podajemy 4 główne argumenty:
-      - Wysokość.
-      - Szerokość.
-      - Liczba pokoi.
-      - Rozmiar pokoi.
+
+  - Wysokość.
+      
+  - Szerokość.
+      
+  - Liczba pokoi.
+      
+  - Rozmiar pokoi.
+  
   Po wywołaniu funkcji mapa 'wypełaniania jest' ścianami na podaną wysokość i szerokość, następnie umieszany jest pierwszy pokój o podanej przez nas wielkości (zmodyfikowanej o losową wartość).
   Pokoje tak dodają się aż do momentu kiedy powstanie kolizja już z istniejącym pokojem lub do momentu kiedy narysujemy wszystkie wymagane pokoje.
   Jeśli następuje kolizja to zmniejszamy rozmiar pokoju który chcemy ustawić aż do momentu kiedy nie będzie kolizji lub kiedy pokój będzie już za mały żeby go wstawiać.
