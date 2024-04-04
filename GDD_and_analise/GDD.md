@@ -51,7 +51,7 @@ nie umierając przy tym.
 Warunek można wziąć maksymalnie 2 razy na etap oraz 5 razy podczas jednej rozgrywki.
 - Ważnym elementem gry będzie zbieranie przedmiotów oraz ulepszanie broni co będzie można zrobić po wbiciu lvl.
 
-### COMBAT SYSTEM
+## COMBAT SYSTEM
 Cechami liczącymi się w walce są:
 - obrażenia
 - punkty życia
