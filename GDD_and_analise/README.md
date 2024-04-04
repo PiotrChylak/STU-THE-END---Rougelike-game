@@ -84,6 +84,18 @@ W salach oraz aulach można znaleźć złoto za które kupimy przedmioty w żabc
     - niespotykanie rzadkie:
         - NAND 5-wejściowy (nikt nie wie co to robi, czy to nawet istnieje?).
 
+## GENEROWANIE MAPY
+- Do funkcji generowania mapy podajemy 4 główne argumenty:
+      - Wysokość.
+      - Szerokość.
+      - Liczba pokoi.
+      - Rozmiar pokoi.
+  Po wywołaniu funkcji mapa 'wypełaniania jest' ścianami na podaną wysokość i szerokość, następnie umieszany jest pierwszy pokój o podanej przez nas wielkości (zmodyfikowanej o losową wartość).
+  Pokoje tak dodają się aż do momentu kiedy powstanie kolizja już z istniejącym pokojem lub do momentu kiedy narysujemy wszystkie wymagane pokoje.
+  Jeśli następuje kolizja to zmniejszamy rozmiar pokoju który chcemy ustawić aż do momentu kiedy nie będzie kolizji lub kiedy pokój będzie już za mały żeby go wstawiać.
+  Po tym wszystkim pokoje łączone są korytarzami do sąsiadujących pokoi.
+  (Mapa generowana jest losowo i za każdym razem kiedy zaczynamy grę lub przejdziemy do następnego poziomu)
+
 ## GAMEPLAY
 - Celem gracza jest przejście przez wszytskie pokoje pokonując przeciwników
 nie umierając przy tym.
