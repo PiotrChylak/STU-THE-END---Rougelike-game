@@ -1,4 +1,9 @@
 # (STU) THE END
+## DISCLAIMER:
+- GDD które widzisz to bardzo okrojona wersja mojej oryginalnej wizji która była o wiele bardziej rozbudowana, szczegółowa i napewno ciekawsza.
+  Aktualna wersja to tylko opis tego co udało mi się zrobić i co rzeczywiście znajduję się w grze.
+  Niestety przez studia i inne obowiązki porzuciłem projekt ale mam plan do niego wrócić w wolnym czasie i dokończyć tak abym był w 100% zadowolony.
+  Jeśli więc interesuje Cię pierwotna wizja jaką miałem na tą grę to proszę o kontakt a chętnie się nią podziele.
 ## STORY:
 - Główny bohater wciela się w studenta pierwszego roku informatyki
 i próbuje walczyć z przeciwnościami losu.
